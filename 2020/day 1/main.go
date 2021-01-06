@@ -1,17 +1,12 @@
 package main
 
 import (
+	"advent-of-code/utils"
 	"fmt"
 	"io/ioutil"
 	"strconv"
 	"strings"
 )
-
-func handle(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
 
 type result struct {
 	First  int
@@ -22,13 +17,13 @@ type result struct {
 func retreiveValues(arr []string) result {
 	for i := 0; i < len(arr); i++ {
 		first, err := strconv.Atoi(arr[i])
-		handle(err)
+		utils.Handle(err)
 		for i := 0; i < len(arr); i++ {
 			second, err := strconv.Atoi(arr[i])
-			handle(err)
+			utils.Handle(err)
 			for i := 0; i < len(arr); i++ {
 				third, err := strconv.Atoi(arr[i])
-				handle(err)
+				utils.Handle(err)
 				if first+second+third == 2020 {
 					return result{
 						First:  first,
@@ -44,7 +39,7 @@ func retreiveValues(arr []string) result {
 
 func main() {
 	data, err := ioutil.ReadFile("input.txt")
-	handle(err)
+	utils.Handle(err)
 	input := string(data)
 	arr := strings.Split(input, "\n")
 	result := retreiveValues(arr)

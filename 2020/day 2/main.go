@@ -1,17 +1,12 @@
 package main
 
 import (
+	"advent-of-code/utils"
 	"io/ioutil"
 	"regexp"
 	"strconv"
 	"strings"
 )
-
-func handle(e error) {
-	if e != nil {
-		panic(e)
-	}
-}
 
 func partOne(arr []string) int {
 	var valid int = 0
@@ -24,9 +19,9 @@ func partOne(arr []string) int {
 		password := res[0][3]
 
 		min, err := strconv.Atoi(strings.Split(num, "-")[0])
-		handle(err)
+		utils.Handle(err)
 		max, err := strconv.Atoi(strings.Split(num, "-")[1])
-		handle(err)
+		utils.Handle(err)
 
 		if strings.Count(password, letter) < min || strings.Count(password, letter) > max {
 			continue
@@ -47,9 +42,9 @@ func partTwo(arr []string) int {
 		password := res[0][3]
 
 		first, err := strconv.Atoi(strings.Split(num, "-")[0])
-		handle(err)
+		utils.Handle(err)
 		second, err := strconv.Atoi(strings.Split(num, "-")[1])
-		handle(err)
+		utils.Handle(err)
 		chars := strings.Split(password, "")
 		if chars[first-1] == letter && !(chars[second-1] == letter) {
 			valid++
@@ -62,7 +57,7 @@ func partTwo(arr []string) int {
 
 func main() {
 	data, err := ioutil.ReadFile("input.txt")
-	handle(err)
+	utils.Handle(err)
 	input := string(data)
 	var arr []string = strings.Split(input, "\n")
 	partOne(arr)
