@@ -1,11 +1,12 @@
 package main
 
 import (
-	"advent-of-code/utils"
 	"io/ioutil"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/SapienceDev/advent-of-code/utils"
 )
 
 func partOne(arr []string) int {

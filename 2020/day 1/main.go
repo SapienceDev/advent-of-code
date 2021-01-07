@@ -1,11 +1,12 @@
 package main
 
 import (
-	"advent-of-code/utils"
 	"fmt"
 	"io/ioutil"
 	"strconv"
 	"strings"
+
+	"github.com/SapienceDev/advent-of-code/utils"
 )
 
 type result struct {
