@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"strings"
 
 	"github.com/SapienceDev/advent-of-code/utils"
@@ -40,9 +39,7 @@ func walk(arr [323][31]string, right int, down int) {
 }
 
 func main() {
-	data, err := ioutil.ReadFile("input.txt")
-	utils.Handle(err)
-	input := string(data)
+	input := utils.ReadFile("input.txt")
 	arr := strings.Split(input, "")
 	twoD := create2D(arr)
 	walk(twoD, 1, 1)
