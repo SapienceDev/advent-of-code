@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"strconv"
 	"strings"
 
@@ -39,9 +38,7 @@ func retreiveValues(arr []string) result {
 }
 
 func main() {
-	data, err := ioutil.ReadFile("input.txt")
-	utils.Handle(err)
-	input := string(data)
+	input := utils.ReadFile("input.txt")
 	arr := strings.Split(input, "\n")
 	result := retreiveValues(arr)
 	fmt.Println(result.First * result.Second * result.Third)

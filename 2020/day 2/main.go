@@ -1,7 +1,6 @@
 package main
 
 import (
-	"io/ioutil"
 	"regexp"
 	"strconv"
 	"strings"
@@ -57,9 +56,7 @@ func partTwo(arr []string) int {
 }
 
 func main() {
-	data, err := ioutil.ReadFile("input.txt")
-	utils.Handle(err)
-	input := string(data)
+	input := utils.ReadFile("input.txt")
 	var arr []string = strings.Split(input, "\n")
 	partOne(arr)
 	partTwo(arr)
