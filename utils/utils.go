@@ -1,6 +1,11 @@
 package utils
 
-import "io/ioutil"
+import (
+	"fmt"
+	"os"
+	"os/exec"
+	"strings"
+)
 
 // Handle handles errors
 func Handle(e error) {
@@ -9,12 +14,12 @@ func Handle(e error) {
 	}
 }
 
-// ReadFile reads an input file and returns a string representation of that file
-func ReadFile(file string) string {
-	data, err := ioutil.ReadFile(file)
+// GetInput retreive the input files for the specified year and day
+func GetInput(year int, day int) string {
+	cmd := exec.Command("curl", fmt.Sprintf("https://adventofcode.com/%d/day/%d/input", year, day), "-H", fmt.Sprintf("Cookie: session=%s", os.Getenv("SESSION")))
+	stdout, err := cmd.Output()
 	Handle(err)
-	input := string(data)
-	return input
+	return strings.TrimSpace(string(stdout))
 }
 
 // Contains determines whether str exists in arr

@@ -9,7 +9,7 @@ import (
 )
 
 func partOne() {
-	data := utils.ReadFile("input.txt")
+	data := utils.GetInput(2020, 7)
 	input := string(data)
 	arr := strings.Split(input, "\n")
 

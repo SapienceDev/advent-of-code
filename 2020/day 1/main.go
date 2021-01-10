@@ -38,7 +38,7 @@ func retreiveValues(arr []string) result {
 }
 
 func main() {
-	input := utils.ReadFile("input.txt")
+	input := utils.GetInput(2020, 1)
 	arr := strings.Split(input, "\n")
 	result := retreiveValues(arr)
 	fmt.Println(result.First * result.Second * result.Third)

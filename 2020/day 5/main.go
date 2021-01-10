@@ -24,7 +24,7 @@ func get(rows []int, keys []string) int {
 }
 
 func main() {
-	input := utils.ReadFile("input.txt")
+	input := utils.GetInput(2020, 5)
 	passes := strings.Split(input, "\n")
 
 	var rows [128]int

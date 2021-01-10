@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	input := utils.ReadFile("input.txt")
+	input := utils.GetInput(2020, 6)
 	re := regexp.MustCompile("\\n\\s")
 	arr := re.Split(input, -1)
 	var total int = 0
@@ -38,5 +38,5 @@ func main() {
 			}
 		}
 	}
-	fmt.Printf("Part 2: %d", sum)
+	fmt.Printf("Part 2: %d\n", sum)
 }

@@ -59,7 +59,7 @@ func validatePid(input string) bool {
 
 func main() {
 	re := regexp.MustCompile("\\n\\s")
-	input := utils.ReadFile("input.txt")
+	input := utils.GetInput(2020, 4)
 	arr := re.Split(input, -1)
 	var valid int = 0
 	for _, element := range arr {

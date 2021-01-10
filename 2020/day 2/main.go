@@ -56,7 +56,7 @@ func partTwo(arr []string) int {
 }
 
 func main() {
-	input := utils.ReadFile("input.txt")
+	input := utils.GetInput(2020, 2)
 	var arr []string = strings.Split(input, "\n")
 	partOne(arr)
 	partTwo(arr)

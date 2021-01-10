@@ -39,7 +39,7 @@ func walk(arr [323][31]string, right int, down int) {
 }
 
 func main() {
-	input := utils.ReadFile("input.txt")
+	input := utils.GetInput(2020, 3)
 	arr := strings.Split(input, "")
 	twoD := create2D(arr)
 	walk(twoD, 1, 1)
