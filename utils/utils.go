@@ -16,3 +16,13 @@ func ReadFile(file string) string {
 	input := string(data)
 	return input
 }
+
+// Contains determines whether str exists in arr
+func Contains(arr []string, str string) bool {
+	for _, val := range arr {
+		if val == str {
+			return true
+		}
+	}
+	return false
+}

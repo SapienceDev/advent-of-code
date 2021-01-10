@@ -29,7 +29,7 @@ func main() {
 		for _, question := range questions {
 			var yes int = 0
 			for _, person := range persons {
-				if contains(strings.Split(person, ""), question) {
+				if utils.Contains(strings.Split(person, ""), question) {
 					yes++
 				}
 			}
@@ -39,13 +39,4 @@ func main() {
 		}
 	}
 	fmt.Printf("Part 2: %d", sum)
-}
-
-func contains(arr []string, str string) bool {
-	for _, val := range arr {
-		if val == str {
-			return true
-		}
-	}
-	return false
 }
