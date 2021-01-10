@@ -14,7 +14,7 @@ func Handle(e error) {
 	}
 }
 
-// GetInput retreive the input files for the specified year and day
+// GetInput retreives the input files for the specified year and day
 func GetInput(year int, day int) string {
 	cmd := exec.Command("curl", fmt.Sprintf("https://adventofcode.com/%d/day/%d/input", year, day), "-H", fmt.Sprintf("Cookie: session=%s", os.Getenv("SESSION")))
 	stdout, err := cmd.Output()
