@@ -9,7 +9,7 @@ import (
 	"github.com/SapienceDev/advent-of-code/utils"
 )
 
-func partTwo() {
+func main() {
 	data := utils.GetInput(2020, 7)
 	input := string(data)
 	arr := strings.Split(input, "\n")

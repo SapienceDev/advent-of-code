@@ -8,7 +8,7 @@ import (
 	"github.com/SapienceDev/advent-of-code/utils"
 )
 
-func partOne() {
+func main() {
 	data := utils.GetInput(2020, 7)
 	input := string(data)
 	arr := strings.Split(input, "\n")
@@ -28,15 +28,15 @@ func partOne() {
 		bags[name] = strings.Trim(contains, " ")
 	}
 
-	ans := p1Find(bags, "shiny gold")
+	ans := find(bags, "shiny gold")
 	fmt.Printf("Part 1: %d\n", len(ans))
 }
 
-func p1Find(bags map[string]string, s string) (res []string) {
+func find(bags map[string]string, s string) (res []string) {
 	for k, v := range bags {
 		if strings.Contains(v, s) {
 			res = append(res, k)
-			ans := p1Find(bags, k)
+			ans := find(bags, k)
 			if len(ans) > 0 {
 				for _, val := range ans {
 					if !utils.Contains(res, val) {
