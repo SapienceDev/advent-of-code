@@ -20,12 +20,10 @@ func main() {
 	for i := 0; i < len(instructions); i++ {
 		instructions := strings.Split(input, "\n")
 		program := program{}
-		if strings.HasPrefix(instructions[i], "nop") || strings.HasPrefix(instructions[i], "jmp") {
-			if strings.HasPrefix(instructions[i], "nop") {
-				instructions[i] = strings.Replace(instructions[i], "nop", "jmp", -1)
-			} else {
-				instructions[i] = strings.Replace(instructions[i], "jmp", "nop", -1)
-			}
+		if strings.HasPrefix(instructions[i], "nop") {
+			instructions[i] = strings.Replace(instructions[i], "nop", "jmp", -1)
+		} else if strings.HasPrefix(instructions[i], "jmp") {
+			instructions[i] = strings.Replace(instructions[i], "jmp", "nop", -1)
 		}
 		done := program.visitInstruction(instructions, 0)
 		if done {
@@ -36,7 +34,7 @@ func main() {
 
 func (p *program) visitInstruction(instructions []string, pos int) bool {
 	if pos >= len(instructions) {
-		fmt.Printf("acc: %d pos %d\n", p.Accumulator, pos)
+		fmt.Printf("acc: %d pos: %d\n", p.Accumulator, pos)
 		return true
 	}
 	if contains(p.Visited, pos) {
