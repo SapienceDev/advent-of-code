@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"sort"
-	"strconv"
 	"strings"
 
 	"github.com/SapienceDev/advent-of-code/utils"
@@ -11,7 +10,7 @@ import (
 
 func main() {
 	input := utils.GetInput(2020, 9)
-	arr := mapToInt(strings.Split(string(input), "\n"))
+	arr := utils.MapToInt(strings.Split(string(input), "\n"))
 	findInvalidNum(arr, 25)
 	for i := 2; i < len(arr); i++ {
 		findSum(arr, 0, i)
@@ -52,12 +51,4 @@ func findInvalidNum(arr []int, size int) (invalid int) {
 		preamble = append(preamble[1:size], val)
 	}
 	return invalid
-}
-
-func mapToInt(arr []string) (res []int) {
-	for _, val := range arr {
-		val, _ := strconv.Atoi(val)
-		res = append(res, val)
-	}
-	return res
 }

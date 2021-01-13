@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"strconv"
 	"strings"
 )
 
@@ -30,4 +31,13 @@ func Contains(arr []string, str string) bool {
 		}
 	}
 	return false
+}
+
+// MapToInt maps each value of arr to an integer
+func MapToInt(arr []string) (res []int) {
+	for _, val := range arr {
+		val, _ := strconv.Atoi(val)
+		res = append(res, val)
+	}
+	return res
 }
