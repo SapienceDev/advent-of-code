@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://miro.medium.com/max/676/1*N9PUrRBk1XAH-wDNQwdvMQ.jpeg" height=256/>
+  <img src="https://repository-images.githubusercontent.com/112706767/160be980-3b1a-11eb-9dbe-439a40adfa99" height=256/>
 </p>
 
 <h1 align="center">Advent of Code</h1>
